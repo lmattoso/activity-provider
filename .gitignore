@@ -21,3 +21,17 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
+backend/services/.idea/
+backend/services/.gradle/
+backend/services/build/build/
+backend/services/build/
+build/
+backend/.gradle/6.5.1/fileChanges/last-build.bin
+backend/.gradle/6.5.1/fileHashes/fileHashes.lock
+backend/.gradle/6.5.1/gc.properties
+backend/.gradle/checksums/checksums.lock
+backend/.gradle/vcs-1/gc.properties
+scripts/sispj-service-0.0.1.zip
+scripts/sispj-portal-0.0.1.zip
+

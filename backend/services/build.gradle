@@ -1,0 +1,71 @@
+plugins {
+	id 'org.springframework.boot' version '2.4.2'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'com.m2w'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = JavaVersion.VERSION_11
+targetCompatibility = JavaVersion.VERSION_11
+
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+configurations {
+	developmentOnly
+	runtimeClasspath {
+		extendsFrom developmentOnly
+	}
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+bootJar {
+	baseName = 'sispj'
+	version =  '0.0.1-SNAPSHOT'
+}
+
+repositories {
+	mavenCentral()
+	maven { url 'https://repo.spring.io/milestone' }
+	maven { url 'https://repo.spring.io/snapshot' }
+}
+dependencies {
+
+	// Spring
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.boot:spring-boot-starter-mail'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+	// Lombok and Mapstruct
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+	implementation 'org.mapstruct:mapstruct-jdk8:1.3.0.Final'
+	annotationProcessor 'org.mapstruct:mapstruct-processor:1.3.0.Final'
+
+	// Database
+	implementation 'org.liquibase:liquibase-core'
+	runtimeOnly 'org.postgresql:postgresql'
+
+	// Additional Libs
+	compile group: 'io.jsonwebtoken', name: 'jjwt', version: '0.9.1'
+	compile group: 'javax.validation', name: 'validation-api', version: '2.0.1.Final'
+	compile group: 'org.apache.commons', name: 'commons-text', version: '1.8'
+	compile group: 'com.itextpdf', name: 'itextpdf', version: '5.5.13.2'
+	compile group: 'com.dropbox.core', name: 'dropbox-core-sdk', version: '3.1.5'
+
+	// Tests
+	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+	testImplementation group: 'org.hamcrest', name: 'hamcrest-core', version: '2.2'
+	testImplementation("org.springframework.security:spring-security-test")
+	testImplementation("org.jeasy:easy-random-core:4.0.0")
+}
+test {
+	useJUnitPlatform()
+}
