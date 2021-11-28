@@ -1,4 +1,4 @@
-package com.activity.provider.model;
+package com.activity.provider.dto;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,7 +9,6 @@ import lombok.experimental.SuperBuilder;
 @NoArgsConstructor
 @ToString(callSuper=true)
 @SuperBuilder
-public class QualAnalyticsDTO {
-    private String studentActivityProfile;
-    private String activityHeatMap;
+public class AnalyticsRequestDTO {
+    private String activityID;
 }

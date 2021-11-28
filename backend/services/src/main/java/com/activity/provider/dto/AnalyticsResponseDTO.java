@@ -1,4 +1,4 @@
-package com.activity.provider.model;
+package com.activity.provider.dto;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

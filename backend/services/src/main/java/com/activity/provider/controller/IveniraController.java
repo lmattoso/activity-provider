@@ -1,6 +1,6 @@
 package com.activity.provider.controller;
 
-import com.activity.provider.model.*;
+import com.activity.provider.dto.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;

@@ -9,4 +9,5 @@ public class ActivityProviderApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ActivityProviderApplication.class, args);
 	}
+
 }

@@ -1,4 +1,4 @@
-package com.activity.provider.model;
+package com.activity.provider.dto;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,8 +9,6 @@ import lombok.experimental.SuperBuilder;
 @NoArgsConstructor
 @ToString(callSuper=true)
 @SuperBuilder
-public class ActivityDeploymentRequestDTO {
-    private String activityID;
-    private Long inveniraStdID;
-    private JsonParamsDTO json_params;
+public class ActivityDeploymentResponseDTO {
+    private String url;
 }
