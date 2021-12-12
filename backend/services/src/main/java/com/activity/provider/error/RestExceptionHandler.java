@@ -2,7 +2,6 @@ package com.activity.provider.error;
 
 
 import com.activity.provider.error.exception.ApiException;
-import com.activity.provider.error.exception.TokenRefreshException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
@@ -14,7 +13,6 @@ import org.springframework.validation.FieldError;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
@@ -47,13 +45,6 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
                 request.getRequestURI(),
                 ex.getExceptionDefinition().getErrorCode());
 
-        return new ResponseEntity<>(apiError, apiError.getStatus());
-    }
-
-    @ExceptionHandler(value = TokenRefreshException.class)
-    @ResponseStatus(HttpStatus.UNAUTHORIZED)
-    public ResponseEntity<Object>  handleTokenRefreshException(TokenRefreshException ex, WebRequest request) {
-        ApiError apiError = new ApiError(HttpStatus.UNAUTHORIZED, ex.getMessage(), ex, request.getContextPath());
         return new ResponseEntity<>(apiError, apiError.getStatus());
     }
 

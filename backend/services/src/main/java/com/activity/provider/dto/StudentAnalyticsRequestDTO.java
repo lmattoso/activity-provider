@@ -7,6 +7,6 @@ import lombok.*;
 @AllArgsConstructor
 @ToString(callSuper=true)
 @Builder
-public class AnalyticsRequestDTO {
-    private String activityID;
+public class StudentAnalyticsRequestDTO {
+    private Long inveniraStdID;
 }

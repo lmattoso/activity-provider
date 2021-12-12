@@ -1,14 +1,13 @@
 package com.activity.provider.dto;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 import lombok.experimental.SuperBuilder;
 
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 @ToString(callSuper=true)
-@SuperBuilder
+@Builder
 public class ActivityDeploymentRequestDTO {
     private String activityID;
     private Long inveniraStdID;

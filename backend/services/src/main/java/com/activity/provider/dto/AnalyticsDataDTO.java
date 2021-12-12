@@ -1,17 +1,15 @@
 package com.activity.provider.dto;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
-import lombok.experimental.SuperBuilder;
+import lombok.*;
 
 import java.util.List;
 
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 @ToString(callSuper=true)
-@SuperBuilder
-public class AnalyticsResponseDTO {
+@Builder
+public class AnalyticsDataDTO {
     private Long inveniraStdID;
     private List<QuantAnalyticsDTO> quantAnalytics;
     private QualAnalyticsDTO qualAnalytics;
