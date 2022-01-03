@@ -22,14 +22,32 @@ public class StudentAnswerRepository {
         addActivityData(ActivityRepository.ACTIVITY_A000001, STUDENT_000001, true);
         addActivityData(ActivityRepository.ACTIVITY_A000002, STUDENT_000001, false);
         addActivityData(ActivityRepository.ACTIVITY_A000003, STUDENT_000001, true);
+        addActivityData(ActivityRepository.ACTIVITY_A000004, STUDENT_000001, true);
+        addActivityData(ActivityRepository.ACTIVITY_A000005, STUDENT_000001, false);
+        addActivityData(ActivityRepository.ACTIVITY_A000006, STUDENT_000001, true);
+        addActivityData(ActivityRepository.ACTIVITY_A000007, STUDENT_000001, true);
+        addActivityData(ActivityRepository.ACTIVITY_A000008, STUDENT_000001, false);
+        addActivityData(ActivityRepository.ACTIVITY_A000009, STUDENT_000001, true);
 
         addActivityData(ActivityRepository.ACTIVITY_A000001, STUDENT_000002, true);
         addActivityData(ActivityRepository.ACTIVITY_A000002, STUDENT_000002, true);
         addActivityData(ActivityRepository.ACTIVITY_A000003, STUDENT_000002, true);
+        addActivityData(ActivityRepository.ACTIVITY_A000004, STUDENT_000002, true);
+        addActivityData(ActivityRepository.ACTIVITY_A000005, STUDENT_000002, true);
+        addActivityData(ActivityRepository.ACTIVITY_A000006, STUDENT_000002, true);
+        addActivityData(ActivityRepository.ACTIVITY_A000007, STUDENT_000002, true);
+        addActivityData(ActivityRepository.ACTIVITY_A000008, STUDENT_000002, true);
+        addActivityData(ActivityRepository.ACTIVITY_A000009, STUDENT_000002, true);
 
         addActivityData(ActivityRepository.ACTIVITY_A000001, STUDENT_000003, true);
         addActivityData(ActivityRepository.ACTIVITY_A000002, STUDENT_000003, false);
         addActivityData(ActivityRepository.ACTIVITY_A000003, STUDENT_000003, false);
+        addActivityData(ActivityRepository.ACTIVITY_A000004, STUDENT_000003, true);
+        addActivityData(ActivityRepository.ACTIVITY_A000005, STUDENT_000003, false);
+        addActivityData(ActivityRepository.ACTIVITY_A000006, STUDENT_000003, false);
+        addActivityData(ActivityRepository.ACTIVITY_A000007, STUDENT_000003, true);
+        addActivityData(ActivityRepository.ACTIVITY_A000008, STUDENT_000003, false);
+        addActivityData(ActivityRepository.ACTIVITY_A000009, STUDENT_000003, false);
     }
 
     private static void addActivityData(String activityID, Long inveniraStdID, boolean correct) {

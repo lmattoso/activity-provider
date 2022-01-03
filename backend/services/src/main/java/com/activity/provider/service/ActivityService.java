@@ -6,19 +6,17 @@ import com.activity.provider.model.StudentAnswer;
 import com.activity.provider.repository.ActivityRepository;
 import com.activity.provider.repository.StudentAnswerRepository;
 import com.activity.provider.util.SingletonAnalyticsProcessor;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@AllArgsConstructor
 public class ActivityService {
 
-    @Autowired
-    private ActivityRepository repository;
-
-    @Autowired
-    private StudentAnswerRepository studentAnswerRepository;
+    private final ActivityRepository repository;
+    private final StudentAnswerRepository studentAnswerRepository;
 
     public Activity getByActivityID(String activityID) {
         return repository.getById(activityID);

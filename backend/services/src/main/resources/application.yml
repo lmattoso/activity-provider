@@ -4,3 +4,5 @@ server:
 spring:
   application:
     name: activity-provider
+
+report-logo: 'report_logo.png'
