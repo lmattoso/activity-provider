@@ -1,15 +1,13 @@
 package com.activity.provider.report.strategy;
 
 import com.activity.provider.report.ReportParams;
-import com.activity.provider.report.system.ReportSubSystemRepresentation;
-import com.itextpdf.text.Document;
-import com.itextpdf.text.DocumentException;
+import com.activity.provider.report.system.ReportContent;
+import com.activity.provider.report.system.ReportHeaderField;
 
-import java.io.IOException;
-import java.net.URISyntaxException;
+import java.util.List;
 
 public interface ReportStrategy {
-    String getLogo();
-    void createHeader(ReportSubSystemRepresentation reportSubSystem, Document document, ReportParams params) throws DocumentException, IOException, URISyntaxException;
-    void createContent(ReportSubSystemRepresentation reportSubSystem, Document document, ReportParams params) throws DocumentException, IOException, URISyntaxException;
+    String getLogoName();
+    List<ReportHeaderField> getHeaderContent(ReportParams params);
+    ReportContent getReportContent(ReportParams params);
 }

@@ -41,7 +41,7 @@ public class ReportSubSystemRepresentation {
         document.add(layout);
     }
 
-    public void createItems(List<ReportItemHeader> headers, List<ReportItemRow> rows, Document document, long value, long total) throws DocumentException {
+    public void createItems(Document document, List<ReportItemHeader> headers, List<ReportItemRow> rows, long value, long total) throws DocumentException {
         if(rows != null && !rows.isEmpty()) {
             PdfPTable table = new PdfPTable(7);
             table.setWidthPercentage(100);
@@ -150,5 +150,10 @@ public class ReportSubSystemRepresentation {
 
         addCell(table, "TOTAL:", Element.ALIGN_RIGHT, 6, font, PdfPCell.NO_BORDER, BaseColor.GRAY, 25);
         addCell(table, String.format("%d de %d", value, total), Element.ALIGN_RIGHT, 1, font, PdfPCell.NO_BORDER, BaseColor.GRAY, 25);
+    }
+
+    public void createContent(Document document, ReportContent reportContent) throws DocumentException {
+        this.createParagraph(document, "Descrição: ", reportContent.getDescription());
+        this.createItems(document, reportContent.getHeaders(), reportContent.getRows(), reportContent.getCurrent(), reportContent.getTotal());
     }
 }
