@@ -23,11 +23,7 @@ public class ReportFacade {
 
     private ReportSubSystemRepresentation reportSubSystem;
 
-    private Map<ReportType, ReportStrategy> reportStrategies;
-
-    public byte[] generateReport(ReportParams params) {
-        ReportStrategy strategy = this.getStrategy(params.getReportType());
-
+    public byte[] generateReport(ReportParams params, ReportStrategy strategy) {
         try {
             Document document = new Document();
             ByteArrayOutputStream stream = new ByteArrayOutputStream();
@@ -48,9 +44,5 @@ public class ReportFacade {
         }
 
         return null;
-    }
-
-    private ReportStrategy getStrategy(ReportType type) {
-        return Optional.ofNullable(reportStrategies.get(type)).orElseThrow();
     }
 }
