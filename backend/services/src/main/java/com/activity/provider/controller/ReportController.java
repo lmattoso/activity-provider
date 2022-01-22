@@ -24,6 +24,20 @@ public class ReportController {
     public ResponseEntity<byte[]> generateReport(@PathVariable Long inveniraStdID) {
         return ResponseEntity.ok()
             .header("Content-Disposition", "attachment; filename=\"report_student_performance" + LocalDateTime.now().toLocalTime() + ".pdf\""
-            ).body(service.generatePerformanceReport(inveniraStdID));
+            ).body(service.generateStudentPerformanceReport(inveniraStdID));
+    }
+
+    @GetMapping(value = "student/{inveniraStdID}", produces = MediaType.APPLICATION_OCTET_STREAM_VALUE)
+    public ResponseEntity<byte[]> generateStudentPerformanceReport(@PathVariable Long inveniraStdID) {
+        return ResponseEntity.ok()
+                .header("Content-Disposition", "attachment; filename=\"report_activity_performance" + LocalDateTime.now().toLocalTime() + ".pdf\""
+                ).body(service.generateStudentPerformanceReport(inveniraStdID));
+    }
+
+    @GetMapping(value = "activity/{activityID}", produces = MediaType.APPLICATION_OCTET_STREAM_VALUE)
+    public ResponseEntity<byte[]> generateActivityPerformanceReport(@PathVariable String activityID) {
+        return ResponseEntity.ok()
+                .header("Content-Disposition", "attachment; filename=\"report_activity_performance" + LocalDateTime.now().toLocalTime() + ".pdf\""
+                ).body(service.generateActivityPerformanceReport(activityID));
     }
 }

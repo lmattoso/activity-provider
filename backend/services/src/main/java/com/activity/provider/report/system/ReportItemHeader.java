@@ -1,7 +1,6 @@
-package com.activity.provider.util;
+package com.activity.provider.report.system;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.itextpdf.text.Element;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -12,11 +11,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ReportItem {
-    private String value;
+public class ReportItemHeader {
+    private String name;
+    private int colSpan;
     private int alignment;
-
-    public static ReportItem build(String value, int alignment) {
-        return ReportItem.builder().value(value).alignment(alignment).build();
-    }
 }

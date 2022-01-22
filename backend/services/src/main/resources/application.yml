@@ -5,4 +5,6 @@ spring:
   application:
     name: activity-provider
 
-report-logo: 'report_logo.png'
+logo:
+  student-performance: 'student-performance-logo.png'
+  activity-performance:  'activity-performance-logo.png'

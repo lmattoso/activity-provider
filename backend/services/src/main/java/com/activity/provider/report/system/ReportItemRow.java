@@ -1,4 +1,4 @@
-package com.activity.provider.util;
+package com.activity.provider.report.system;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
@@ -6,13 +6,13 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ReportItemHeader {
-    private String name;
-    private int colSpan;
-    private int alignment;
+public class ReportItemRow {
+    private List<ReportItem> items;
 }
